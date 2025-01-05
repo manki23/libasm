@@ -8,9 +8,9 @@
 ;   - rax: Number of bytes written, or -1 on error.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-            global  _ft_write
+            global  ft_write
 
-_ft_write:
+ft_write:
             mov     rax, 1	        ; Load the system call number for `write` into `rax`.
             syscall				    ; Execute the system call write(rdi, rsi, rdx) => rax
             jc      ft_exit         ; If CF (Carry Flag) is set (error), jump to error handling.

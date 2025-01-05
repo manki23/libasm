@@ -7,9 +7,9 @@
 ;   - rax: Pointer to the destination buffer (`dest`).
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-            global  _ft_strcpy
+            global  ft_strcpy
 
-_ft_strcpy:
+ft_strcpy:
             mov		rax, 0				; Initialize rax to 0 (used as an index)
             jmp		ft_copy			    ; jump to ft_copy label
 

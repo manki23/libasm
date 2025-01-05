@@ -6,9 +6,9 @@
 ;   - rax: Length of the string.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-            global  _ft_strlen
+            global  ft_strlen
 
-_ft_strlen:
+ft_strlen:
             mov		rax, 0		        ; Initialize rax to 0 (length counter).
             jmp		ft_loop             ; Jump to ft_loop label
 

@@ -1,26 +1,12 @@
-/usr/bin/ld: main.o: in function `test_ft_strlen':
-main.c:(.text+0x1c): undefined reference to `ft_strlen'
-/usr/bin/ld: main.c:(.text+0x3c): undefined reference to `ft_strlen'
-/usr/bin/ld: main.o: in function `test_ft_strcpy':
-main.c:(.text+0x8d): undefined reference to `ft_strcpy'
-/usr/bin/ld: main.c:(.text+0xb4): undefined reference to `ft_strcpy'
-/usr/bin/ld: main.o: in function `test_ft_strcmp':
-main.c:(.text+0x106): undefined reference to `ft_strcmp'
-/usr/bin/ld: main.c:(.text+0x12c): undefined reference to `ft_strcmp'
-/usr/bin/ld: main.c:(.text+0x152): undefined reference to `ft_strcmp'
-/usr/bin/ld: main.c:(.text+0x178): undefined reference to `ft_strcmp'
-/usr/bin/ld: main.c:(.text+0x19e): undefined reference to `ft_strcmp'
-/usr/bin/ld: main.o:main.c:(.text+0x1c4): more undefined references to `ft_strcmp' follow
-/usr/bin/ld: main.o: in function `test_ft_write':
-main.c:(.text+0x208): undefined reference to `ft_write'
-/usr/bin/ld: main.c:(.text+0x271): undefined reference to `ft_write'
-/usr/bin/ld: main.c:(.text+0x2ad): undefined reference to `ft_write'
-/usr/bin/ld: main.o: in function `test_ft_read':
-main.c:(.text+0x334): undefined reference to `ft_read'
-/usr/bin/ld: main.c:(.text+0x3ab): undefined reference to `ft_read'
-/usr/bin/ld: main.c:(.text+0x3fc): undefined reference to `ft_read'
-/usr/bin/ld: main.o: in function `test_ft_strdup':
-main.c:(.text+0x452): undefined reference to `ft_strdup'
-/usr/bin/ld: main.c:(.text+0x486): undefined reference to `ft_strdup'
+make main
+echo "Compiling main.c into main.o 🔩"
+Compiling main.c into main.o 🔩
+gcc -Wall -Wextra -Werror -Iinc -c main.c -o main.o
+echo "Building main binary 🔨"
+Building main binary 🔨
+gcc -Wall -Wextra -Werror -Iinc -o main main.o -L. -lasm
+/usr/bin/ld: ./libasm.a(ft_strdup.o): warning: relocation against `malloc@@GLIBC_2.2.5' in read-only section `.text'
+/usr/bin/ld: ./libasm.a(ft_strdup.o): relocation R_X86_64_PC32 against symbol `malloc@@GLIBC_2.2.5' can not be used when making a PIE object; recompile with -fPIE
+/usr/bin/ld: final link failed: bad value
 collect2: error: ld returned 1 exit status
 make: *** [Makefile:51: main] Error 1

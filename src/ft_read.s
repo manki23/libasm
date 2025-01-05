@@ -8,9 +8,9 @@
 ;   - rax: Number of bytes successfully read, or -1 for an error.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-            global  _ft_read        ; The global instruction makes _ft_read globally accessible (for linking with C code)
+            global  ft_read        ; The global instruction makes _ft_read globally accessible (for linking with C code)
 
-_ft_read:                           ; Function label (entry point).
+ft_read:                           ; Function label (entry point).
 
             mov     rax, 0 	        ; Load the system call number for `read` into `rax`.
             syscall				    ; Executes the system call specified by rax (aka Call read)
