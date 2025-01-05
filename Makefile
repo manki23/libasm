@@ -16,9 +16,9 @@ HEADER = inc/libasm.h
 
 # Compiler and assembler options
 NASM = nasm
-NASMFLAGS = -f elf64
+NASMFLAGS = -f elf64 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinc
+CFLAGS = -Wall -Wextra -Werror -Iinc -fPIC
 
 # Rule to build the library
 all: $(NAME)

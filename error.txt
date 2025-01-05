@@ -1,10 +1,9 @@
-make main
 echo "Compiling main.c into main.o 🔩"
 Compiling main.c into main.o 🔩
-gcc -Wall -Wextra -Werror -Iinc -c main.c -o main.o
+gcc -Wall -Wextra -Werror -Iinc -fPIC -c main.c -o main.o
 echo "Building main binary 🔨"
 Building main binary 🔨
-gcc -Wall -Wextra -Werror -Iinc -o main main.o -L. -lasm
+gcc -Wall -Wextra -Werror -Iinc -fPIC -o main main.o -L. -lasm
 /usr/bin/ld: ./libasm.a(ft_strdup.o): warning: relocation against `malloc@@GLIBC_2.2.5' in read-only section `.text'
 /usr/bin/ld: ./libasm.a(ft_strdup.o): relocation R_X86_64_PC32 against symbol `malloc@@GLIBC_2.2.5' can not be used when making a PIE object; recompile with -fPIE
 /usr/bin/ld: final link failed: bad value
