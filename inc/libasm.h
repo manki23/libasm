@@ -3,12 +3,8 @@
 
 #include <stddef.h> // For size_t
 #include <errno.h>  // For errno
-
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <stdlib.h> // For malloc & free
-#include <stdio.h>
+#include <unistd.h> // For read and write
+#include <stdlib.h> // For malloc
 
 // Function prototypes
 size_t      ft_strlen(const char *s);
