@@ -16,9 +16,8 @@ HEADER = inc/libasm.h
 
 # Compiler and assembler options
 NASM = nasm
-NASMFLAGS = -f elf64 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinc -fPIC
+NASMFLAGS = -f elf64
+CC = clang -Iinc
 
 # Rule to build the library
 all: $(NAME)
@@ -51,9 +50,9 @@ main: $(NAME) main.o
 	$(CC) $(CFLAGS) -o $@ main.o -L. -lasm
 
 # Rule to compile main.c into main.o
-main.o: main.c $(HEADER)
+main.o: main.c $(HEADER) 
 	echo "Compiling main.c into main.o 🔩"
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -c $< -o $@
 
 # Rule to clean object files
 clean:
