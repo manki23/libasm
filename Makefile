@@ -27,37 +27,43 @@ all: $(NAME)
 # $@ -> The target name (libasm.a)
 # $^ -> All prerequisites (list of all .o files)
 $(NAME): $(OBJS)
-	@echo "Creating library $(NAME) with objects: $(OBJS)"
-	ar rcs $@ $^
+	@echo "Creating library $(NAME) with objects: $(OBJS) 📚"
+	@ar rcs $@ $^
 
 # Rule to create object files in the obj/ directory
 # $< -> The first prerequisite (the .s file being compiled)
 obj/%.o: src/%.s $(HEADER) | obj
-	$(NASM) $(NASMFLAGS) $< -o $@
+	@echo "Compiling object files... 🗂️"
+	@$(NASM) $(NASMFLAGS) $< -o $@
 
 # Rule to create the obj/ directory if it doesn't exist
 # This is a special "order-only prerequisite" to ensure the directory exists
 obj:
-	mkdir -p obj
+	@echo "Creating obj/ repository 📂"
+	@mkdir -p obj
 
 # Rule to build the main test program
 # $@ -> The target name (main)
 # $^ -> All prerequisites (main.o and libasm.a)
 main: $(NAME) main.o
-	$(CC) $(CFLAGS) -o $@ main.o -L. -lasm
+	@echo "Building main binary 🔨"
+	@$(CC) $(CFLAGS) -o $@ main.o -L. -lasm
 
 # Rule to compile main.c into main.o
 main.o: main.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "Compiling main.c into main.o 🔩"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Rule to clean object files
 clean:
-	rm -f $(OBJS) main.o
+	@rm -f $(OBJS) main.o
+	@echo "Object files cleaned ✅"
 
 # Rule to clean all generated files
 fclean: clean
-	rm -f $(NAME) main
-	rm -rf obj
+	@rm -f $(NAME) main
+	@rm -rf obj
+	@echo "Generated files deleted 🧹🧹🧹"
 
 # Rule to recompile everything from scratch
 re: fclean all
