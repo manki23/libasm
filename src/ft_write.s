@@ -11,7 +11,7 @@
             global  _ft_write
 
 _ft_write:
-            mov     rax, 0x2000004	; Load the system call number for `write` into `rax`.
+            mov     rax, 1	        ; Load the system call number for `write` into `rax`.
             syscall				    ; Execute the system call write(rdi, rsi, rdx) => rax
             jc      ft_exit         ; If CF (Carry Flag) is set (error), jump to error handling.
             ret					    ; Return the number of bytes written in `rax` (len written)

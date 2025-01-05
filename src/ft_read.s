@@ -12,7 +12,7 @@
 
 _ft_read:                           ; Function label (entry point).
 
-            mov     rax, 0x2000003 	; Load the system call number for `read` into `rax`.
+            mov     rax, 0 	        ; Load the system call number for `read` into `rax`.
             syscall				    ; Executes the system call specified by rax (aka Call read)
             jc      ft_exit         ; Jump to error handling if the system call failed.
             ret					    ; Return rax (number of bytes read).
